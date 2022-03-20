@@ -59,9 +59,9 @@ self.addEventListener('install', () => {
   console.log("fuck")
   self.waitUntil(
     addResourcesToCache([
-      '/gallery/bountyHunters.jpg',
-      '/gallery/myLittleVader.jpg',
-      '/gallery/snowTroopers.jpg',
+      '/serviceworkertest/gallery/bountyHunters.jpg',
+      '/serviceworkertest/gallery/myLittleVader.jpg',
+      '/serviceworkertest/gallery/snowTroopers.jpg',
     ])
   );
 });
@@ -73,6 +73,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log('get fetchhhh');
   event.respondWith(
-    cacheFirst(event.request, event.preloadResponse, '/gallery/404.jpg')
+    cacheFirst(event.request, event.preloadResponse, '/serviceworkertest/gallery/404.jpg')
   );
 });
