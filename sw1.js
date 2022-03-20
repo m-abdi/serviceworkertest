@@ -55,9 +55,9 @@ const cacheFirst = async (request, preloadResponsePromise, fallbackURL) => {
   }
 };
 
-self.addEventListener('install', () => {
+self.addEventListener('install', (event) => {
   console.log("fuck")
-  self.waitUntil(
+  event.waitUntil(
     addResourcesToCache([
       '/serviceworkertest/gallery/bountyHunters.jpg',
       '/serviceworkertest/gallery/myLittleVader.jpg',
@@ -67,7 +67,7 @@ self.addEventListener('install', () => {
 });
 
 self.addEventListener('activate', (event) => {
-  self.waitUntil(deleteOldCache());
+  event.waitUntil(deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
