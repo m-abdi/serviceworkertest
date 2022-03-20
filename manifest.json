@@ -18,6 +18,6 @@
       "sizes": "400x400"
     }
   ],
-  "start_url": "/",
+  "start_url": "/serviceworkertest/",
   "display": "standalone"
 }
